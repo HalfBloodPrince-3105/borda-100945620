@@ -1,9 +1,9 @@
-steps:
-    - name: 'gcr.io/cloud-builders/docker'
-      args:
-        - 'build'
-        - '-f'
-        - 'docker/Dockerfile'
-        - '-t'
-        - 'us-central1-docker.pkg.dev/borda-dc-lab5/borda-100945620/app:$COMMIT_SHA'
-        - '.'  
+FROM node:14  # Or use Python, Nginx, etc.
+
+WORKDIR /app
+
+COPY . /app
+
+RUN npm install  # Install dependencies (use pip install if it's Python)
+
+CMD ["node", "src/index.js"]  # Run your application
