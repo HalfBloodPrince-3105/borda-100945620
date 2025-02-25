@@ -12,3 +12,6 @@ steps:
     args:
       - 'push'
       - 'us-central1-docker.pkg.dev/borda-dc-lab5/borda-100945620/app:$COMMIT_SHA'
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET  # ✅ Fixes the issue
+  logging: CLOUD_LOGGING_ONLY  # Alternative fix
