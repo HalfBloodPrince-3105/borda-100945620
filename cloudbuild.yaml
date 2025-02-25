@@ -12,6 +12,3 @@ steps:
     args:
       - 'push'
       - 'us-central1-docker.pkg.dev/borda-dc-lab5/borda-100945620/app:$COMMIT_SHA'
-
-options:
-  logging: REGIONAL_USER_OWNED_BUCKET
