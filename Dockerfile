@@ -1,9 +1,17 @@
-FROM node:14  # Or use Python, Nginx, etc.
+# Use a base image (Node.js)
+FROM node:14
 
+# Set working directory inside the container
 WORKDIR /app
 
+# Copy all files from local to container
 COPY . /app
 
-RUN npm install  # Install dependencies (use pip install if it's Python)
+# Install dependencies
+RUN npm install
 
-CMD ["node", "src/index.js"]  # Run your application
+# Expose the application port
+EXPOSE 3000
+
+# Run the application
+CMD ["node", "src/index.js"]
